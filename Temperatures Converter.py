@@ -29,25 +29,26 @@ def temperature_converter():
 
     choice = int(input("\nEnter the number of your conversion choice: "))
 
-    if choice == 1:
-        f = float(input("Enter temperature in Fahrenheit: "))
-        print(f"{f} Fahrenheit is {fahrenheit_to_celsius(f)} Celsius.")
-    elif choice == 2:
-        c = float(input("Enter temperature in Celsius: "))
-        print(f"{c} Celsius is {celsius_to_fahrenheit(c)} Fahrenheit.")
-    elif choice == 3:
-        c = float(input("Enter temperature in Celsius: "))
-        print(f"{c} Celsius is {celsius_to_kelvin(c)} Kelvin.")
-    elif choice == 4:
-        k = float(input("Enter temperature in Kelvin: "))
-        print(f"{k} Kelvin is {kelvin_to_celsius(k)} Celsius.")
-    elif choice == 5:
-        f = float(input("Enter temperature in Fahrenheit: "))
-        print(f"{f} Fahrenheit is {fahrenheit_to_kelvin(f)} Kelvin.")
-    elif choice == 6:
-        k = float(input("Enter temperature in Kelvin: "))
-        print(f"{k} Kelvin is {kelvin_to_fahrenheit(k)} Fahrenheit.")
-    else:
-        print("Invalid choice! Please select a valid option.")
+    match choice:
+        case 1:
+            f = float(input("Enter temperature in Fahrenheit: "))
+            print(f"{f} Fahrenheit is {fahrenheit_to_celsius(f):.2f} Celsius.")
+        case 2:
+            c = float(input("Enter temperature in Celsius: "))
+            print(f"{c} Celsius is {celsius_to_fahrenheit(c):.2f} Fahrenheit.")
+        case 3:
+            c = float(input("Enter temperature in Celsius: "))
+            print(f"{c} Celsius is {celsius_to_kelvin(c):.2f} Kelvin.")
+        case 4:
+            k = float(input("Enter temperature in Kelvin: "))
+            print(f"{k} Kelvin is {kelvin_to_celsius(k):.2f} Celsius.")
+        case 5:
+            f = float(input("Enter temperature in Fahrenheit: "))
+            print(f"{f} Fahrenheit is {fahrenheit_to_kelvin(f):.2f} Kelvin.")
+        case 6:
+            k = float(input("Enter temperature in Kelvin: "))
+            print(f"{k} Kelvin is {kelvin_to_fahrenheit(k):.2f} Fahrenheit.")
+        case _:
+            print("Invalid choice! Please select a valid option.")
 
 temperature_converter()
